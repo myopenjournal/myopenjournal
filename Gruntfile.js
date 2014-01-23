@@ -25,8 +25,22 @@ module.exports = function (grunt) {
       dist: 'dist'
     },
 
+    // JSON sorting
+    sortJSON: {
+      task: {
+        src: [
+          'package.json',
+          'bower.json'
+        ]
+      }
+    },
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
+      json: {
+        files: ['<% yeoman.app %>/package.json'],
+        tasks: ['sortJSON']
+      },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
@@ -332,6 +346,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'sortJSON',
     'bower-install',
     'useminPrepare',
     'concurrent:dist',
