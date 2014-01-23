@@ -22,9 +22,9 @@
     "angular-mocks": "1.2.6",
     "angular-scenario": "1.2.6"
   },
-  "main": [
-    "app.js"
-  ],
+  "main": {
+    "0": "app.js"
+  },
   "name": "moj",
   "repository": "https://github.com/myopenjournal/myopenjournal.git",
   "version": "0.0.0"

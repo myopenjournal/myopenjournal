@@ -31,7 +31,10 @@ module.exports = function (grunt) {
         src: [
           'package.json',
           'bower.json'
-        ]
+        ],
+        options: {
+          jshint: true
+        }
       }
     },
 
