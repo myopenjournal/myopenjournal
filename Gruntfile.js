@@ -359,6 +359,7 @@ module.exports = function (grunt) {
 
 
   grunt.registerTask('serve', function (target) {
+    console.log('serve');
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
@@ -368,9 +369,9 @@ module.exports = function (grunt) {
       'bower-install',
       'concurrent:server',
       'autoprefixer',
-      'express:dev',
       'configureProxies:server',
       'connect:livereload',
+      'express:dev',
       'watch'
     ]);
   });
