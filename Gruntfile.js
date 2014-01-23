@@ -26,6 +26,16 @@ module.exports = function (grunt) {
       dist: 'dist'
     },
 
+    // Express API settings
+    express: {
+      dev: {
+        options: {
+          script: grunt.file.readJSON('package.json').main,
+          port: sailsLocal.port
+        }
+      }
+    },
+
     // JSON sorting
     sortJSON: {
       task: {
@@ -41,10 +51,6 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      json: {
-        files: ['<% yeoman.app %>/package.json'],
-        tasks: ['sortJSON']
-      },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
@@ -62,6 +68,13 @@ module.exports = function (grunt) {
       },
       gruntfile: {
         files: ['Gruntfile.js']
+      },
+      express: {
+        files: ['index.js', './api/{,*/}*', './config/{,*}*'],
+        tasks: ['express:dev'],
+        options: {
+          spawn: false
+        }
       },
       livereload: {
         options: {
@@ -355,6 +368,7 @@ module.exports = function (grunt) {
       'bower-install',
       'concurrent:server',
       'autoprefixer',
+      'express:dev',
       'configureProxies:server',
       'connect:livereload',
       'watch'
