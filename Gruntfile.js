@@ -31,7 +31,8 @@ module.exports = function (grunt) {
       dev: {
         options: {
           script: grunt.file.readJSON('package.json').main,
-          port: sailsLocal.port
+          port: sailsLocal.port,
+          background: true
         }
       }
     },
