@@ -103,7 +103,10 @@ module.exports = function (grunt) {
         port: sailsLocal.port,
         https: false,
         changeOrigin: false,
-        xforward: false
+        xforward: false,
+        rewrite: {
+          '^/api': ''
+        }
       }],
       livereload: {
         options: {
