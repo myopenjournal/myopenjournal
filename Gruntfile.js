@@ -52,6 +52,13 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
+      bowerJSON: {
+        files: ['bower.json'],
+        tasks: ['bower-install'],
+        options: {
+          livereload: true
+        }
+      },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
