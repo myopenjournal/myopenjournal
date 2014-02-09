@@ -1,8 +1,9 @@
 'use strict';
 
-var dependencies = [
-  'ui.bootstrap',
-  'ui.router'
-];
-
-angular.module('mojApp', dependencies);
+angular.module('mojApp', ['ui.router'])
+.config(function(states, $stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/');
+  states.forEach(function(state) {
+    $stateProvider.state(state);
+  });
+});
