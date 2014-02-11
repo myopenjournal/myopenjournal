@@ -354,6 +354,12 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      fonts: {
+        expand: true,
+        cwd: '<%= yeoman.app %>/bower_components/font-awesome/fonts',
+        dest: '<%= yeoman.dist %>/fonts',
+        src: '{,*/}*.{eot,svg,ttf,woff}',
       }
     },
 
@@ -429,6 +435,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'less',
     'sortJSON',
     'bower-install',
     'useminPrepare',
@@ -436,6 +443,7 @@ module.exports = function (grunt) {
     'autoprefixer',
     'concat',
     'ngmin',
+    'copy:fonts',
     'copy:dist',
     'cssmin',
     'uglify',
