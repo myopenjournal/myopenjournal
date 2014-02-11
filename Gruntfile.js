@@ -50,7 +50,18 @@ module.exports = function (grunt) {
       }
     },
 
-    // Watches files for changes and runs tasks based on the changed files
+    less: {
+      development: {
+        options: {
+          paths: ['app/bower_install/flatly']
+        },
+        files: {
+          'app/styles/home.css': 'app/less/home.less'
+        }
+      }
+    },
+
+    // Watches files for changes and runs tasks based on the changed file
     watch: {
       bowerJSON: {
         files: ['bower.json'],
@@ -72,6 +83,10 @@ module.exports = function (grunt) {
         options: {
           livereload: true
         }
+      },
+      less: {
+        files: ['<%= yeoman.app %>/less/{,*/}*.less'],
+        tasks: ['newer:less']
       },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
@@ -219,10 +234,6 @@ module.exports = function (grunt) {
         exclude: ['<%= yeoman.app %>/bower_components/bootstrap/dist/css/bootstrap.css']
       }
     },
-
-
-
-
 
     // Renames files for browser caching purposes
     rev: {
@@ -383,6 +394,7 @@ module.exports = function (grunt) {
       'clean:server',
       'bower-install',
       'concurrent:server',
+      'less',
       'autoprefixer',
       'configureProxies:server',
       'connect:livereload',
