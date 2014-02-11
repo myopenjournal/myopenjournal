@@ -15,11 +15,11 @@
     "angular": "1.2.6",
     "angular-bootstrap": "~0.10.0",
     "angular-ui-router": "0.2.8-bowratic-tedium",
+    "bootstrap": "~3.1.0",
     "es5-shim": "~2.1.0",
-    "json3": "~3.2.6",
-    "font-awesome": "~4.0.3",
     "flatly": "myopenjournal/flatly",
-    "bootstrap": "~3.1.0"
+    "font-awesome": "~4.0.3",
+    "json3": "~3.2.6"
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",

@@ -55,9 +55,25 @@ module.exports = function (grunt) {
         options: {
           paths: ['app/bower_install/flatly']
         },
-        files: {
-          'app/styles/home.css': 'app/less/home.less'
-        }
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/less',
+          src: '{,*}*{less,css}',
+          dest: '.tmp/styles',
+          ext: '.css'
+        }]
+      },
+      production: {
+        options: {
+          paths: ['app/bower_install/flatly']
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/less',
+          src: '{,*}*{less,css}',
+          dest: '<%= yeoman.dist %>/styles',
+          ext: '.css'
+        }]
       }
     },
 
