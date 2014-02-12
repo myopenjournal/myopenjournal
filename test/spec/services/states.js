@@ -15,4 +15,10 @@ describe('Service: states', function () {
     expect(!!states).toBe(true);
   });
 
+  it('should have a name for every state', function () {
+    expect(states.every(function(state) {
+      return !!state.name;
+    }));
+  });
+
 });
