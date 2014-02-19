@@ -2,8 +2,8 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<html lang="en" ng-app="mojApp">
+<!--[if gt IE 8]><!--> <html class="no-js fill-vertical" ng-app="mojApp"> <!--<![endif]-->
+<html lang="en" ng-app="mojApp" class="fill-vertical">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,15 +22,16 @@
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/sidenav.css">
     <!-- endbuild -->
   </head>
-  <body class="ng-cloak">
+  <body class="ng-cloak fill-vertical">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ui-view></div>
+    <div ui-view class="fill-vertical"></div>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>

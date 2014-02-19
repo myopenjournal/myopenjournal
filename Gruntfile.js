@@ -53,7 +53,7 @@ module.exports = function (grunt) {
     less: {
       development: {
         options: {
-          paths: ['app/bower_install/flatly']
+          paths: ['<% yeoman.app %>/bower_components/flatly']
         },
         files: [{
           expand: true,
@@ -65,7 +65,7 @@ module.exports = function (grunt) {
       },
       production: {
         options: {
-          paths: ['app/bower_install/flatly']
+          paths: ['<% yeoman.app %>/bower_components/flatly']
         },
         files: [{
           expand: true,
